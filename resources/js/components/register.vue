@@ -1,23 +1,24 @@
 <template>
     <div>
-        <h1>Register</h1>
-        <div>
-            <label for="name">Name</label>
-            <input type="text" v-model="user.name">
+        <div class="row mt-5">
+            <div class="col-md-8 mx-auto">
+                <form class="form-signin">
+                    <h1 class="h3 mb-3 font-weight-normal text-center">Register</h1>
+                    <label for="inputEmail" class="sr-only text-left">Name</label>
+                    <input type="text" v-model="user.name" id="inputEmail" class="form-control mb-2" placeholder="name" required="" autofocus=""/>
+                    <label for="inputEmail" class="sr-only text-left">Email address</label>
+                    <input type="email" id="inputEmail" class="form-control mb-2" placeholder="Email address" required="" autofocus="" v-model="user.email"/>
+                    <label for="inputPassword" class="sr-only text-left">Password</label>
+                    <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Password" required="" v-model="user.password" />
+                    <label for="inputPassword" class="sr-only text-left">Confirm password</label>
+                    <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Password" required="" v-model="user.password_confirmation" />
+                    <!-- <div class="checkbox mb-3">
+                        <label> <input type="checkbox" value="remember-me" /> Remember me </label>
+                    </div> -->
+                    <button @click="register()" class="btn btn-lg btn-primary btn-block mt-5" type="submit">Register</button>
+                </form>
+            </div>
         </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="text" v-model="user.email">
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" v-model="user.password">
-        </div>
-        <div>
-            <label for="password_confirmation">Confirm Password</label>
-            <input type="password" v-model="user.password_confirmation">
-        </div>
-        <button @click="register()">Register</button>
     </div>
 </template>
 

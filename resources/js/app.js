@@ -20,8 +20,10 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import Auth from './Auth.js';
 
+
 Vue.prototype.auth = Auth;
 Vue.use(VueAxios, axios);
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 import App from './app.vue';
 import router from './routes';

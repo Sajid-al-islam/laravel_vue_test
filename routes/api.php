@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\BookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,9 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
+    Route::get('/books', [BookController::class, 'index']);
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/validatePersonalToken', function () {
+        return ['message' => 'is_valid'];
+    });
 });
